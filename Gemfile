@@ -40,6 +40,7 @@ group :development, :test do
   gem 'unicorn'
   gem 'sqlite3'
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :production do
