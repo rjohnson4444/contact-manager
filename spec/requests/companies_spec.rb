@@ -2,9 +2,16 @@ require 'rails_helper'
 
 RSpec.describe "Companies", type: :request do
   describe "GET /companies" do
-    it "works! (now write some real specs)" do
-      get companies_path
-      expect(response).to have_http_status(200)
+    let(:company) { Company.new(name: "Chase") }
+
+    it "is valid" do
+      expect(company).to be_valid
     end
+
+    it 'is invalid without a name' do
+      company.name = nil
+      expect(company).to_not be_valid
+    end
+
   end
 end
